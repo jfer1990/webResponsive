@@ -13,29 +13,110 @@ header{
 }
 header h1{
     display: none;
+    position: relative;
+    vertical-align: top;
 }
 header nav{
-    display: none;
+    display: inline-block;
+    margin: 0px;
+    height: 100%;
 }
-div#prevSection,
-div#nextSection{
+header #showMenu{
+    height: 100%;
+    width: auto;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+#cardMenu{
+    display: none;
+    position: relative;
+    top: 0px;
+    background:white;
+    width: 200px;
+    margin-bottom: 10px;
+    border-right: 3px solid rgb(53, 60, 73);
+    top: -37px;
+    z-index: 99;
+    padding-bottom: 50px;
+}
+#cardMenu #cerrarMenu{
+    display: inline-block;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+#cardMenu #cerrarMenu img:hover{
+    transform-origin: center;
+    transform: rotate(190deg);
+}
+#cardMenu h2{
+    margin: 1px 1px 1px 5px;
+    display: block;
+}
+#cardMenu ul{
+    margin: 3px 2px 5px 2px;
+    padding: 0px;
+}
+#cardMenu li{
+    list-style: none;
+    line-height: 2em;
+    font-size: 1.5em;
+    padding: 10px 40px 10px 40px;
+    text-align: center;
+    cursor: pointer;
+}
+#cardMenu li:hover{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    font-size: 1.7em;
+}
+#cardMenu li a{
+    text-decoration: none;
+}
+
+nav img#x{
+    height: 1em;
+    width: auto;
+}
+header nav figure{
+    margin: 0px;
+    margin-left: 10px;
+    height: 100%;
+}
+nav #cardMenu figure{
+    margin: 5px;
+}
+nav #cardMenu img#logo{
+    display: block;
+    margin: 0px;
+}
+nav #showMenu img#menu{
+    height: 100%;
+    width: auto;
+}
+header #prevSection,
+header #nextSection{
     width: 25px;
     height: 25px;
-    background: red;
+    background: transparent;
     cursor: pointer;
     margin:5px;
     position: absolute;
     top:0px;
+    overflow: hidden;
 }
 div#nextSection{
     right:5px;
 }
 div#prevSection{
-    right:35px;
+    right:45px;
 }
 #prevSection img,
 #nextSection img{
-    width: 100%;
+    width: 50%;
     top: -19px;
     left: -19px;
 }
@@ -57,20 +138,121 @@ div#prevSection{
     body{
         background: pink;
     }
-    #prevSection,
-    #nextSection{
+    header{
+        height: 60px;
+    }
+    header h1{
+        display: inline-block;
+        width: 20%;
+        margin: 0px;
+        margin-left: 20px;
+        height: 100%;
+        min-width: 260px;
+    }
+    header h1 > *{
+        display: inline-block;
+        text-decoration: none;
+        vertical-align: middle;
+        color: white;
+        font-size: .8em;
+        margin: 0px;
+        height: 100%;
+        line-height:60px ;
+    } 
+    header h1 a figure{
+        width: 40%;
+        height: 100%;
+        margin: 0px;
+    }
+    header h1 a figure img{
+        width: auto;
+        height: 100%;
+    }
+    nav #showMenu,
+    nav #cerrarMenu,
+    nav #cardMenu figure{
+        display: none;
+    }
+    nav{
+        background: none;
+        width: 60%;
+    }
+
+    #cardMenu{
+        position: relative;
+        text-align: right;
+        background: none;
+        border: none;
+        width: 100%;
+        top: 0px;
+        padding: 0px;
+        margin: 0px;
+        display: inline-block;
+    }
+    #cardMenu ul{
+        display: inline-block;
+        margin: 0px;
+    }
+    #cardMenu li{
+        position: relative;
+        padding: 0px;
+        display: inline-block;
+        width: 75px;
+        background: none;
+        text-align: center;
+        font-size: 1em;
+        margin: 0px -2px;
+        color: white;
+        line-height: 60px;
+    }
+    #cardMenu li:hover{
+        font-size: 1.1em;
+        border:none;
+    }
+    #cardMenu li a{
+        display: inline;
+        color: white;
+        padding-bottom: 5px;
+    }
+    #cardMenu li a:hover{
+        border-bottom: 3px solid white;
+    }
+    #cardMenu li::before{
+        content: "";
+        width: 75px;
+        border: 2px sold black;
+        bottom: 100%;
+        left: 100%;
+    }
+
+    #cardMenu h2{
+        display: none;
+    }
+
+    header #nextSection,
+    header #prevSection{
         position: absolute;
         width: 50px;
-        height: 40px;
-        background: #29abe2;
+        height: 50px;
+        background: rgb(43, 110, 233);
+        border-radius: 50% 50%;
         right: 50px;
         z-index: 999;
     }
-    #prevSection{
-        top: 115px;
+    header #prevSection{
+        top: 110px;
     }
-    #nextSection{
+    header #nextSection{
         top: 190px;
+    }
+    #prevSection img,
+    #nextSection img
+    {
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        top: 5px;
+        left: 0px;
     }
 }
 @media screen and (min-width:950px){

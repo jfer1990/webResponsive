@@ -21,13 +21,18 @@
             <a href="#">Johhny B good</a>
         </h1>
         <nav id="menu">
-            <div id="showMenu">
+            <div id="showMenu" onclick="displayMenu()">
                 <figure>
-                    <img src="img/menu.png" alt="">
+                    <img id="menu" src="img/menu.png" alt="">
                 </figure>
             </div>
             <div id="cardMenu">
-                <h2>E<span><img src="img/X.png" alt=""></span>it</h2>  
+                <div id="cerrarMenu" onclick="displayMenu()">
+                    <h2>E<span><img id="x" src="img/X.png" alt=""></span>it</h2>  
+                </div>
+                <figure>
+                    <img id="logo" src="img/logo.svg" alt="avatar fernando">
+                </figure>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Sobre mi</a></li>
@@ -46,5 +51,31 @@
             <img src="img/forward-arrow.svg" alt="next">
         </div>
     </header>
+    <script>
+        setWidth();
+        
+        function setWidth(){
+            var screenWidth = window.innerWidth;
+            var cardMenu = document.getElementById('cardMenu');
+            if (screenWidth < 767){
+                cardMenu.style.display = "none";
+            }
+            else{
+                cardMenu.style.display = "block";
+            }
+        }
+
+        function displayMenu(){
+            var cardMenu = document.getElementById('cardMenu');
+            var display = cardMenu.style.display;
+            if(display=="none"){
+                cardMenu.style.display = "block";
+            }
+            else{
+                cardMenu.style.display = "none";
+            }
+            console.log(display);
+        }
+    </script>
 </body>
 </html>
