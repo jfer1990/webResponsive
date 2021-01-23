@@ -2,14 +2,18 @@
 body{
     font-family: 'YuseiMagick',sans-serif;
     font-size: 16px;
-    background-color: purple;
     position: relative;
+    background: #233D58;
+}
+body *{
+    box-sizing: border-box;
 }
 header{
     width: 100%;
     height: 35px;
     background: #233D58;
     position: relative; 
+    z-index: 999;
 }
 header h1{
     display: none;
@@ -123,20 +127,317 @@ div#prevSection{
 #prevSection img{
     transform: rotate(180deg);
 }
+div#slider{
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+
+div#slider section.slide{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+div#slider > *{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+#slider #home{
+    background: #233D58;
+    position: relative;
+    text-align: center;
+}
+#slider #home .mainanimation{
+    background: none;
+    width: 90%;
+    margin-left: 5%;
+    min-height: 300px;
+    position: absolute;
+}
+#slider #home .mainlogo{
+    background: none;
+    position: relative;
+    width: 60vw;
+    margin-left: 20vw;
+    min-height: 430px;
+
+}
+#slider #home .mainlogo figure,
+#slider #home .mainlogo img{
+    width: 100%;
+    margin: 0px;
+}
+#slider #home .buttonspage{
+    width: 70%;
+    position: relative;
+    left: 15%;
+    text-align: center;
+}
+#slider #home .buttonspage > *{
+    display: inline-block;
+    width: 40%;
+    margin: 5px 2.5%;
+    color: white;
+    padding: 15px 2.5%;
+    border-radius: 6px;
+}
+#slider #home .buttonspage #contratame{
+    cursor: pointer;
+    background: #F8931F;
+}
+#slider #home .buttonspage a{
+    text-decoration: none;
+    background: #29abe2;
+}
+
+#slider #home .mainlogo h2{
+    font-size: 1.2em;
+    padding-top: 50px;
+    margin: 0px;
+    color: white;
+    font-weight: lighter;
+}
+#slider #home .mainlogo strong{
+    font-size: 2em;
+    display: block;
+}
+
+#slider #sobre{
+    background: #233D58;
+
+}
+#slider #skills{
+    background: #233D58;
+
+}
+#slider #portfolio{
+    background: #233D58;
+
+}
+#slider #blog{
+    background: #233D58;
+
+}
+div#contact_button{
+    width: 60px;
+    height: 60px;
+    background: #F8931F;
+    color: white;
+    border-radius: 50%;
+    z-index: 80;
+    position: fixed;
+    right: 10px;
+    top: 80vh;
+}
+div#contact_button:hover{
+    cursor: pointer;
+}
+div#contact_button::before{
+    font-family: "icomoon";
+    content: "\e945";
+    font-size: 2em;
+    position: relative;
+    top: 12px;
+    right: -15px;
+
+}
+
+div#contact_form{
+    position: absolute;
+    width: 250px;
+    right: 0px; 
+    top: 35px;
+    background:white;
+    border: 1px solid white;
+    display: none;
+    height: 100vh;
+    z-index: 999;
+    border: 1px solid rgb(97, 98, 117);
+}
+#contact_form form{
+    width: 100%;
+    position: relative;
+}
+#contact_form form > *{
+    width: 100%;
+}
+#contact_form form textarea,
+#contact_form form input{
+    width: 80%;
+    display: block;
+    margin: 20px 10% 20px 10%;
+    border: none;
+    border-bottom: 2px solid gray;
+}
+#contact_form form textarea{
+    margin-bottom: 50px;
+}
+#contact_form #button{
+    background: #F8931F;
+    color: white;
+    border: none;
+    padding: 8px 0px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+div#contact_form #close_form{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 85%;
+    top: 190px ;
+}
+#close_form::before{
+    font-family: "icomoon";
+    content: "\ea0f";
+    position: relative;
+    top: 5px;
+    left: 9px;
+    cursor: pointer;
+}
+#contact_form figure{
+    height: 180px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    background: #29abe2;
+}
+#contact_form figure img{
+    position: relative;
+    top: 10%;
+    height: 80%;
+    margin: 0px;
+}
+#contact_form p{
+    margin-left: 20px;
+    width: 90%;
+
+}
+div#contact_form form input{
+    display: inline-block;
+}
+footer{
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    z-index: 70;
+    height: 100px;
+    position: fixed;
+    bottom: -80px;
+}
+footer:hover{
+    bottom: 0px;
+    transition-duration: .6s;
+}
+footer::after{
+    font-family: 'icomoon';
+    content: "\ea41";
+    font-size: 3em;
+    position: absolute;
+    top: -35px;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 50% 50%;
+    transform: rotate(180deg);
+    left: 45vw;
+
+}
+footer:hover:after{
+    transform: rotate(0deg);
+}
+footer .rrss{
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    background: none;
+
+}
+footer .rrss a{
+    width: 40px;
+    height: 40px;
+    background: none;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+footer .rss a::before{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+}
+footer .rrss a:nth-child(1):before{
+    font-family: "icomoon";
+    content: "\ea90";
+    position: absolute;
+    font-size: 2em;
+    top: 0px;
+    left: 5px;
+}
+footer .rrss a:nth-child(2):before{
+    font-family: "icomoon";
+    position: absolute;
+    content: "\ea92";
+    font-size: 2em;
+    top: 0px;
+    left: 5px;
+
+}
+footer .rrss a:nth-child(3):before{
+    font-family: "icomoon";
+    content: "\ea96";
+    position: absolute;
+    font-size: 2em;
+    top: 0px;
+    left: 5px;
+
+}
+footer .rrss a:nth-child(4):before{
+    font-family: "icomoon";
+    content: "\ea9d";
+    position: absolute;
+    font-size: 2em;
+    top: 0px;
+    left: 5px;
+
+}
+footer p {
+    font-size: 0.7em;
+}
+
 @media screen and (min-width: 480px){
-    body{
-        background-color: red;
+    #slider #home .mainlogo{
+        width: 270px;
+        left: 50%;
+        margin-left: -135px;
+        padding-bottom: 50px;
     }
+    #slider #home .mainlogo h2{
+        font-size: 1.4em;
+    }
+    #slider #home .mainlogo figure{
+        width: 80%;
+        margin-left: 10%;
+    }
+    #slider #home .buttonspage > *{
+        width: 200px;
+    }
+
+
 
 }
 @media screen and (min-width:600px){
     body{
-        background: yellow;
     }
 }
 @media screen and (min-width:767px){
     body{
-        background: pink;
     }
     header{
         height: 60px;
@@ -254,9 +555,15 @@ div#prevSection{
         top: 5px;
         left: 0px;
     }
+    div#contact_form{
+        top: 60px;
+        width: 400px;
+    }
+    div#contact_button{
+        right: 50px;
+    }
 }
 @media screen and (min-width:950px){
     body{
-        background: black;
     }
 }
